@@ -128,13 +128,23 @@ func fpdfNew(orientationStr, unitStr, sizeStr, fontDirStr string, size SizeType)
 	}
 	f.unitStr = unitStr
 	// Page sizes
+	// The size is define in pt
 	f.stdPageSizes = make(map[string]SizeType)
+	f.stdPageSizes["a1"] = SizeType{1683.78, 2383.94}
+	f.stdPageSizes["a2"] = SizeType{1190.55, 1683.78}
 	f.stdPageSizes["a3"] = SizeType{841.89, 1190.55}
 	f.stdPageSizes["a4"] = SizeType{595.28, 841.89}
 	f.stdPageSizes["a5"] = SizeType{420.94, 595.28}
 	f.stdPageSizes["a6"] = SizeType{297.64, 420.94}
-	f.stdPageSizes["a2"] = SizeType{1190.55, 1683.78}
-	f.stdPageSizes["a1"] = SizeType{1683.78, 2383.94}
+
+	f.stdPageSizes["b1"] = SizeType{2004.09, 2834.65}
+	f.stdPageSizes["b2"] = SizeType{1417.32, 2004.09}
+	f.stdPageSizes["b3"] = SizeType{841.89, 1417.32}
+	f.stdPageSizes["b4"] = SizeType{708.66, 841.89}
+	f.stdPageSizes["b5"] = SizeType{498.9, 708.66}
+	f.stdPageSizes["b6"] = SizeType{354.33, 498.9}
+
+	f.stdPageSizes["cable"] = SizeType{42.52, 127.56}
 	f.stdPageSizes["letter"] = SizeType{612, 792}
 	f.stdPageSizes["legal"] = SizeType{612, 1008}
 	f.stdPageSizes["tabloid"] = SizeType{792, 1224}
